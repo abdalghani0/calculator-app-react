@@ -52,11 +52,12 @@ function Header() {
   
           <p>THEME</p>
   
-          <div className="theme-selector"
-                    onClick= {(e) => changeTheme(e)}>
-		            <span id= "1" className= "input"></span>
-		            <span id= "2" className= "input"></span>
-		            <span id= "3" className= "input"></span>
+          <div className="theme-selector">
+                <div onClick= {(e) => changeTheme(e)}>
+                  <span id= "1" className= "input"></span>
+                  <span id= "2" className= "input"></span>
+                  <span id= "3" className= "input"></span>
+                </div>
 		            <span id="slider"></span>
 		      </div> 
   
