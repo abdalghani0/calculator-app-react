@@ -1,0 +1,348 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+==============================
+	        Grid
+==============================
+*/
+ 
+*befor,
+ *after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+         -box-sizing: border-box;
+ }
+ 
+.app {
+	width: 514px;
+	margin: auto auto;
+	height: 100vh;
+	font-family: 'League Spartan', sans-serif;
+  	font-size: 1.375rem;
+	color: hsl(0, 0%, 100%);
+	text-align: center;
+	transition: 0.3s;
+	font-weight: 700;
+}
+
+
+
+.container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: no-wrap;
+	gap: 1rem;
+	width: 100%;
+	margin: 20px auto;
+}
+
+
+
+ 
+/*
+ ===========================
+           header
+ ==========================
+*/
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	width: 100%;
+}
+
+.input {
+  margin-left: 1px;
+  width: 25px;
+}
+
+.header h3 {
+	float: left;
+	font-size: 40px;
+}
+
+
+.theme-toggle {
+	display: grid;
+	justify-content: center;
+    grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 12.5rem;
+	position: relative;
+}
+
+.theme-toggle span {
+	font-size: 11px;
+}
+
+.theme-num {
+	margin-right: 10px;
+}
+
+.theme-selector {
+	display: flex;
+	justify-items: center;
+	position: relative;
+	width: 65px;
+	height: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 0 auto;
+}
+
+#slider {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50px;
+  transition: 0.3s;
+  left: 4px;
+  top: 3px;
+}
+
+/*
+ ===========================
+           screen
+ ==========================
+*/
+
+.screen {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: space-between;
+	border-radius: 10px;
+	width: 100%;
+	padding: 20px;
+}
+
+#current-value {
+	font-size: 30px;
+}
+
+#previous-value {
+	font-size: 12px;
+}
+
+/*
+ ===========================
+           keypad
+ ==========================
+*/
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+	height: 100%;
+  border-radius: 0.25rem;
+	color: hsl(221, 14%, 31%);
+	font-weight: 700;
+	font-size: 1.75em;
+	padding-top: 7px;
+	cursor: pointer;
+}
+
+.key:nth-last-child(-n+2) {
+  grid-column: span 2;
+  font-size: 1em;
+}
+
+.special {
+  font-size: 1em;
+}
+.keypad {
+  display: grid;
+	grid-template-columns:  1fr 1fr 1fr 1fr;
+    gap: 1rem;
+	border-radius: 10px;
+	width: 100%;
+	height: 75%;
+	padding: 30px 20px;
+	height: 340px;
+	vertical-align: center;
+}
+
+/*
+ ===========================
+       themes handeling
+ ==========================
+*/ 
+
+.theme-1 {
+    background-color:  hsl(222, 26%, 31%);
+    color: hsl(0, 0%, 100%);
+}
+
+.theme-1 .theme-selector,
+.theme-1 .keypad {
+	background-color: hsl(223, 31%, 20%);
+}
+
+.theme-1 .screen {
+	background-color: hsl(224, 36%, 15%);
+}
+
+.theme-1 .key {
+	background: hsl(30, 25%, 89%);
+	box-shadow: 0 -3.4px hsl(28, 16%, 65%) inset;
+}
+
+.theme-1 .num:hover,
+.theme-1 .op:hover {
+	background: hsl(0, 0%, 100%);
+}
+
+.theme-1 #slider,
+.theme-1 .result {
+	background-color: hsl(6, 63%, 50%);
+	color: hsl(0, 0%, 100%);
+}
+
+.theme-1 .result {
+	box-shadow: 0 -3.4px hsl(6, 70%, 34%) inset;
+}
+
+.theme-1 .special {
+	background-color: hsl(225, 21%, 49%);
+	color: hsl(0, 0%, 100%);
+	box-shadow: 0 -3.4px hsl(224, 28%, 35%) inset;
+}
+ 
+.theme-2 {
+    background-color:  hsl(0, 0%, 90%);
+}
+
+.theme-2 .theme-selector,
+.theme-2 .keypad {
+	background-color: hsl(0, 5%, 81%);
+}
+
+.theme-2 .header,
+.theme-2 .screen {
+	color: hsl(221, 14%, 31%);;
+}
+
+.theme-2 .screen {
+	background-color: hsl(0, 0%, 93%);
+}
+
+.theme-2 .key {
+	background: hsl(45, 7%, 89%);
+	box-shadow: 0 -3.4px hsl(35, 11%, 61%) inset;
+}
+
+.theme-2 .num:hover,
+.theme-2 .op:hover {
+	background: hsl(0, 0%, 100%);
+}
+
+.theme-2 #slider,
+.theme-2 .result {
+	background-color:  hsl(25, 98%, 40%);
+	color:  hsl(0, 0%, 100%);
+}
+
+.theme-2 .result {
+	box-shadow: 0 -3.4px hsl(25, 99%, 27%) inset;
+}
+
+.theme-2 .special {
+	background-color: hsl(185, 42%, 37%);
+	color:  hsl(0, 0%, 100%);
+	box-shadow: 0 -3.4px hsl(185, 58%, 25%) inset;
+}
+
+.theme-3 {
+    background-color:  hsl(268, 75%, 9%);
+    color:  hsl(52, 100%, 62%);
+}
+
+.theme-3 .theme-selector,
+.theme-3 .keypad {
+	background-color: hsl(268, 71%, 12%);
+}
+
+.theme-3 .header,
+.theme-3 .screen {
+	color: hsl(52, 100%, 62%);
+}
+
+
+.theme-3 .screen {
+	background-color: hsl(268, 71%, 12%);
+}
+
+.theme-3 .key {
+	background-color: hsl(268, 47%, 21%);
+	color:  hsl(52, 100%, 62%);
+	box-shadow: 0 -3.4px hsl(290, 70%, 36%) inset;
+}
+
+.theme-3 .num:hover,
+.theme-3 .op:hover {
+	background:  hsl(268, 47%, 40%);
+}
+
+.theme-3 #slider,
+.theme-3 .result {
+	background-color:  hsl(176, 100%, 44%);
+	color: hsl(198, 20%, 13%);
+}
+
+.theme-3 .result {
+	box-shadow: 0 -3.4px hsl(177, 92%, 70%) inset;
+}
+
+.theme-3 .special {
+	background-color:  hsl(281, 89%, 26%);
+	color: hsl(0, 0%, 100%);
+	box-shadow: 0 -3.4px hsl(285, 91%, 52%) inset;
+}
