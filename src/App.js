@@ -5,7 +5,6 @@ export default function Calculator() {
   const [currentNumber, setCurrentNumber] = useState("0");
   const [previousNumber, setPreviousNumber] = useState("0");
   const [operation, setOperation] = useState("");
-  document.body.className= "theme-1";
 
   return (
     <main className="app">
@@ -27,13 +26,11 @@ export default function Calculator() {
 
 function Header() {
   function changeTheme(event) {
-    if(event.target.id !== "slider" && event.target.id !== null && event.target.id !== "") {
       let themeNum = event.target.id;
       let app = document.body;
       let slider = document.getElementById("slider");
       app.className = `theme-${themeNum}`;
       slider.style.left = themeNum === "1"? "4px" : themeNum === "2"? "25px" :"45px"; 
-  }
   }
 
   return (
@@ -53,12 +50,10 @@ function Header() {
           <p>THEME</p>
   
           <div className="theme-selector">
-                <div onClick= {(e) => changeTheme(e)}>
-                  <span id= "1" className= "input"></span>
-                  <span id= "2" className= "input"></span>
-                  <span id= "3" className= "input"></span>
-                </div>
-		            <span id="slider"></span>
+              <span onClick= {(e) => changeTheme(e)} id= "1" className= "input"></span>
+              <span onClick= {(e) => changeTheme(e)} id= "2" className= "input"></span>
+              <span onClick= {(e) => changeTheme(e)} id= "3" className= "input"></span>
+		          <span id="slider"></span>
 		      </div> 
   
          </div>
